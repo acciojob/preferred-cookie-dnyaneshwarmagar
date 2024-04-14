@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     const expires = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    document.cookie = name + "=" + value + ";" + expires + ";";
   }
 
   // Function to get cookie
   function getCookie(name) {
     const cookieName = name + "=";
-    const decodedCookie = decodeURIComponent(document.cookie);
+    const decodedCookie = document.cookie;
     const cookieArray = decodedCookie.split(';');
     for (let i = 0; i < cookieArray.length; i++) {
       let cookie = cookieArray[i];
